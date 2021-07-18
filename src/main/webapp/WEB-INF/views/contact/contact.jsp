@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@include file="../dynamic/css.jspf"%>
-<%@include file="../dynamic/header_nav.jspf"%>
+<%@include file="../../dynamic/css.jspf"%>
+<%@include file="../../dynamic/header_nav.jspf"%>
 
 <body>
 
@@ -44,27 +44,22 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" action='<c:url value="/contact"/>'>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" class="form-control" name="yourName" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="text" class="form-control" name="yourEmail" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" rows="5" name="theMessage" placeholder="Message"></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <input class="btn btn-secondary" type="submit" value="Send">
             </form>
 
           </div>
@@ -78,7 +73,7 @@
 
 </body>
 
-<%@include file="../dynamic/footer.jspf"%>
-<%@include file="../dynamic/js.jspf"%>
+<%@include file="../../dynamic/footer.jspf"%>
+<%@include file="../../dynamic/js.jspf"%>
 
 </html>
