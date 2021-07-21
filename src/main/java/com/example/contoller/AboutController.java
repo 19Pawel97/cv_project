@@ -22,15 +22,25 @@ public class AboutController {
         this.aboutRepository = aboutRepository;
     }
 
-    @GetMapping("/about")
-    public String getAbout(Model model) {
-        List<About> list = aboutRepository.findAll();
-        model.addAttribute("about", list);
-        return "about/about";
+    @GetMapping("/about_admin")
+    public String getAboutAdmin() {
+        return "about/about_admin";
+    }
+
+//    @GetMapping("/about")
+//    public String getAboutUser(Model model) {
+//        List<About> list = aboutRepository.findAll();
+//        model.addAttribute("about", list);
+//        return "about/about";
+//    }
+
+    @RequestMapping(value = "/about_edit", method = RequestMethod.GET)
+    public String editAbout() {
+        return "about/about_edit";
     }
 
     @RequestMapping(value = "/about_edit", method = RequestMethod.POST)
-    public RedirectView addMessage(@ModelAttribute About about) {
+    public RedirectView addAbout(@ModelAttribute About about) {
         aboutRepository.save(about);
         return new RedirectView("/home");
     }

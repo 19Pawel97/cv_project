@@ -8,7 +8,7 @@
     <nav id="navbar" class="navbar nav-menu">
         <ul>
             <li><a href='<c:url value="http://localhost:8080/home"/>' class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
-            <li><a href='<c:url value="http://localhost:8080/about"/>' class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+            <li><a href='<c:url value="http://localhost:8080/about_admin"/>' class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
             <li><a href='<c:url value="http://localhost:8080/skills"/>' class="nav-link scrollto"><i class="bx bx-align-justify"></i> <span>Skills</span></a></li>
             <li><a href='<c:url value="http://localhost:8080/resume"/>' class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
             <li><a href='<c:url value="http://localhost:8080/services"/>' class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
