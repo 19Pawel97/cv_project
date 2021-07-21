@@ -1,7 +1,6 @@
 package com.example.contoller;
 
 import com.example.model.About;
-import com.example.model.Message;
 import com.example.repository.AboutRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,16 +22,28 @@ public class AboutController {
     }
 
     @GetMapping("/about_admin")
-    public String getAboutAdmin() {
+    public String getAboutAdmin(Model model) {
+        List<About> list = aboutRepository.findAll();
+        if (list.size() > 0) {
+            List<About> last_list = list.subList(list.size() - 1, list.size());
+            model.addAttribute("about", last_list);
+        } else {
+            model.addAttribute("about", list);
+        }
         return "about/about_admin";
     }
 
-//    @GetMapping("/about")
-//    public String getAboutUser(Model model) {
-//        List<About> list = aboutRepository.findAll();
-//        model.addAttribute("about", list);
-//        return "about/about";
-//    }
+    @GetMapping("/about_user")
+    public String getAboutUser(Model model) {
+        List<About> list = aboutRepository.findAll();
+        if (list.size() > 0) {
+            List<About> last_list = list.subList(list.size() - 1, list.size());
+            model.addAttribute("about", last_list);
+        } else {
+            model.addAttribute("about", list);
+        }
+        return "about/about_user";
+    }
 
     @RequestMapping(value = "/about_edit", method = RequestMethod.GET)
     public String editAbout() {
@@ -44,9 +55,6 @@ public class AboutController {
         aboutRepository.save(about);
         return new RedirectView("/home");
     }
-
-
-
 
 
 }
