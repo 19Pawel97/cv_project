@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ResumeController {
     @GetMapping("/resume")
     public String getResume() {
-        return "resume";
+        return "resume/resume_admin";
     }
 }

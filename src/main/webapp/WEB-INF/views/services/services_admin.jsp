@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@include file="../dynamic/css.jspf"%>
-<%@include file="../dynamic/header_nav.jspf"%>
+<%@include file="../../dynamic/css.jspf"%>
+<%@include file="../../dynamic/header_nav.jspf"%>
 
 <body>
 
@@ -103,7 +103,7 @@
 
 </body>
 
-<%@include file="../dynamic/footer.jspf"%>
-<%@include file="../dynamic/js.jspf"%>
+<%@include file="../../dynamic/footer.jspf"%>
+<%@include file="../../dynamic/js.jspf"%>
 
 </html>

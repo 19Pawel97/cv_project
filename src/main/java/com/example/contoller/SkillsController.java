@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SkillsController {
     @GetMapping("/skills")
     public String getSkills() {
-        return "skills";
+        return "skills/skills_admin";
     }
 }

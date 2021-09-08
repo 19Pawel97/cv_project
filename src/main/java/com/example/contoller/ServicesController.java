@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ServicesController {
     @GetMapping("/services")
     public String getServices() {
-        return "services";
+        return "services/services_admin";
     }
 }
